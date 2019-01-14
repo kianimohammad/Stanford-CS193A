@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BerkeleyAdmissionQuizApp</string>
+    <string name="berkeley_admission_quiz">Berkeley Admission Quiz</string>
+    <string name="select_the_bigger_number">Select the bigger number!</string>
 </resources>
