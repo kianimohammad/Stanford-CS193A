@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String [] dynamic = {"OK!", "This", "is", "Epic!"}
+        String [] dynamic = {"OK!", "This", "is", "Epic!"};
 
 
         adapter = new ArrayAdapter<String>(this,
