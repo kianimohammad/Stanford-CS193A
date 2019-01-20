@@ -38,9 +38,8 @@ public class MainActivity extends AppCompatActivity {
     private void readWordsFromFile() {
         int index = 0;
         Scanner scanner = new Scanner(getResources().openRawResource(R.raw.grewords));
-        scanner.useDelimiter("\n");
 
-        while(scanner.hasNext()){
+        while(scanner.hasNextLine()){
             String word = scanner.next();
             String definition = scanner.next();
 
