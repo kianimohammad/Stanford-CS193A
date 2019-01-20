@@ -40,12 +40,14 @@ public class MainActivity extends AppCompatActivity {
         Scanner scanner = new Scanner(getResources().openRawResource(R.raw.grewords));
 
         while(scanner.hasNextLine()){
-            String word = scanner.next();
-            String definition = scanner.next();
+            String line = scanner.nextLine();
+            String[] parts = line.split("\t");
 
-            word_list[index] = word;
-            definition_list[index] = definition;
-            index++;
+            if (parts.length>=2) {
+                word_list[index] = parts[0];
+                definition_list[index] = parts[1];
+                index++;
+            }
         }
     }
 
