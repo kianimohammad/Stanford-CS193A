@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
     android:orientation="vertical"
+    android:background="@android:color/transparent"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,30 +17,37 @@
     <RadioGroup
         android:orientation="horizontal"
         android:gravity="center"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RadioButton
             android:id="@+id/radio_red"
             android:text="Red"
-            android:textColor="@android:color/holo_red_dark"
+            android:layout_margin="20dp"
+            android:textColor="@android:color/holo_red_light"
             android:onClick="changeColor"
+            android:checked="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/radio_blue"
             android:text="Blue"
+            android:layout_margin="20dp"
             android:textColor="@android:color/holo_blue_bright"
+            android:checked="false"
             android:onClick="changeColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
-            android:id="@+id/radio_orange"
-            android:text="Orange"
-            android:textColor="@android:color/holo_orange_dark"
+            android:id="@+id/radio_green"
+            android:text="Green"
+            android:layout_margin="20dp"
+            android:textColor="@android:color/holo_green_light"
             android:onClick="changeColor"
+            android:checked="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
