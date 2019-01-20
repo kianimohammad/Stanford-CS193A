@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ArrayAdapter<String> adapter;
+    private ListView list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,12 +22,11 @@ public class MainActivity extends AppCompatActivity {
         String [] dynamic = {"OK!", "This", "is", "Epic!"}
 
 
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1,
-                        dynamic);
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,
+                dynamic);
 
-        ListView list = (ListView) findViewById(R.id.dynamic_list);
+        list = (ListView) findViewById(R.id.dynamic_list);
         list.setAdapter(adapter);
 
         // set up onclick for the dynamic list (cannot be done via XML integration)
@@ -34,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // the code for the listener function
-                MakeToast("the user clicked item " + position);
+                String item = adapter.getItem(position);
+                MakeToast("the user clicked " + item);
+                adapter.add(item);
+                adapter.notifyDataSetChanged();
             }
         });
 
@@ -44,6 +49,6 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "The Color is now: " + text, Toast.LENGTH_LONG).show();
         Log.d("Toast", text + " toast now on screen");
     }
-    
+
 
 }
