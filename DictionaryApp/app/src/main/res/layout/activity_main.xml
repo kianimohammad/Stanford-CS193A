@@ -10,7 +10,6 @@
         android:textSize="30sp"
         android:gravity="center"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -18,9 +17,15 @@
         android:textColor="@color/colorAccent"
         android:text="(The best dictionary app ever!)"
         android:textSize="10sp"
+        android:layout_margin="10dp"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -30,8 +35,17 @@
 
         <LinearLayout
             android:layout_weight="1"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Static List"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:layout_margin="10dp"/>
 
             <ListView
                 android:layout_width="match_parent"
@@ -43,8 +57,17 @@
 
         <LinearLayout
             android:layout_weight="1"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dynamic List"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:layout_margin="10dp"/>
 
             <ListView
                 android:layout_width="match_parent"
