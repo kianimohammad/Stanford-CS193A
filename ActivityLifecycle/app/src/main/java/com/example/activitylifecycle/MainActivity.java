@@ -21,15 +21,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.d("LifeCycle", "onRestoreInstanceState()");
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         Log.d("LifeCycle", "onResume()");
     }
 
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        Log.d("LifeCycle", "onRestoreInstanceState()");
+    protected void onPause() {
+        super.onPause();
+        Log.d("LifeCycle", "onPause()");
     }
 
     @Override
@@ -39,23 +45,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("LifeCycle", "onPause()");
-    }
-
-
-    @Override
     protected void onStop() {
         super.onStop();
         Log.d("LifeCycle", "onStop()");
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d("LifeCycle", "onRestart()");
-    }
 
     @Override
     protected void onDestroy() {
