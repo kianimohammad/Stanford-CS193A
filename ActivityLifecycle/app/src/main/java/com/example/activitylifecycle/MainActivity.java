@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d("LifeCycle", "onCreate()");
     }
 
+    // Extremely important! Screen Rotation calls onDestroy. It completely destroys the activity and then recreates it
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -39,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
         Log.d("LifeCycle", "onSaveInstanceState()");
     }
 
@@ -50,10 +53,17 @@ public class MainActivity extends AppCompatActivity {
         Log.d("LifeCycle", "onStop()");
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("LifeCycle", "onRestart()");
+    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d("LifeCycle", "onDestroy()");
     }
+
+    // Save instance state vs storing.
 }
